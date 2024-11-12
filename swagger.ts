@@ -1,7 +1,7 @@
 import {
   CreateCalculationDto,
   CreateCalculationRequest,
-} from "./src/handlers/calculation/commands/createCalculation";
+} from "./src/handlers/calculations/commands/createCalculation";
 
 const swaggerAutogen = require("swagger-autogen")();
 

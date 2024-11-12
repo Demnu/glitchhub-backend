@@ -1,4 +1,6 @@
 import { z } from "zod";
+import { calculations } from "../../../db/schema";
+import { db } from "../../../app";
 export const CreateCalculationRequestSchema = z.object({
   calculationName: z.string(),
 });
@@ -10,9 +12,12 @@ export type CreateCalculationRequest = z.infer<
 export interface CreateCalculationDto {
   calculationId: number;
 }
-export const createCalculation = (
+export const createCalculation = async (
   request: CreateCalculationRequest
-): CreateCalculationDto => {
+): Promise<CreateCalculationDto> => {
+  await db
+    .insert(calculations)
+    .values({ calculationName: request.calculationName });
   const calculationDto: CreateCalculationDto = {
     calculationId: Math.floor(Math.random() * 1000),
   };
