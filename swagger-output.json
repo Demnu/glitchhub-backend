@@ -60,7 +60,42 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CreateCalculationDto"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/orders/getOrders": {
+      "post": {
+        "tags": [
+          "Orders"
+        ],
+        "description": "Endpoint to get orders from Ordermentum.",
+        "parameters": [
+          {
+            "name": "Get Orders Request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetOrdersRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/OrderDtos"
+            }
           },
           "400": {
             "description": "Bad Request"
@@ -88,6 +123,27 @@
         "calculationId": {
           "type": "number",
           "example": -1
+        }
+      }
+    },
+    "GetOrdersRequest": {
+      "type": "object",
+      "properties": {
+        "pageNumber": {
+          "type": "number",
+          "example": 0
+        }
+      }
+    },
+    "OrderDtos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "number",
+            "example": 1
+          }
         }
       }
     },

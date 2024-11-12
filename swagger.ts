@@ -2,12 +2,18 @@ import {
   CreateCalculationDto,
   CreateCalculationRequest,
 } from "./src/handlers/calculations/commands/createCalculation";
+import {
+  GetOrdersRequest,
+  OrderDto,
+} from "./src/handlers/orders/queries/getOrders";
 
 const swaggerAutogen = require("swagger-autogen")();
 
 interface ObjectDefinitionsInterface {
   CreateCalculationRequest: CreateCalculationRequest;
   CreateCalculationDto: CreateCalculationDto;
+  GetOrdersRequest: GetOrdersRequest;
+  OrderDtos: OrderDto[];
 }
 
 const definitions: ObjectDefinitionsInterface = {
@@ -15,6 +21,8 @@ const definitions: ObjectDefinitionsInterface = {
     calculationName: "Example Calculation",
   },
   CreateCalculationDto: { calculationId: -1 },
+  GetOrdersRequest: { pageNumber: 0 },
+  OrderDtos: [{ orderId: 1 }],
 };
 
 const doc = {

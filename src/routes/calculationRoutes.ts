@@ -20,7 +20,7 @@ router.post(
     const result = await createCalculation(req.body);
 
     /* #swagger.responses[200] = { 
-  schema: { "$ref": "#/definitions/CreateCalculationDto" }*/
+      schema: { "$ref": "#/definitions/CreateCalculationDto" }} */
     res.status(200).json(result);
   }
 );
