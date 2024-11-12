@@ -22,10 +22,9 @@
     "typescript": "^5.6.3"
   },
   "scripts": {
-    "dev": "npx ts-node src/app.ts",
+    "dev": "npx ts-node swagger.ts && npx ts-node src/app.ts",
     "build": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate-swagger": "npx ts-node swagger.ts",
     "update-database": "npx drizzle-kit push"
   },
   "keywords": [],

@@ -11,6 +11,22 @@
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "label": "generate-swagger",
+      "type": "shell",
+      "command": "npx",
+      "args": ["ts-node", "swagger.ts"],
+      "group": {
+        "kind": "build"
+      }
+    },
+    {
+      "label": "build-and-generate-swagger",
+      "dependsOn": ["tsc: build", "generate-swagger"],
+      "group": {
+        "kind": "build"
+      }
     }
   ]
 }
