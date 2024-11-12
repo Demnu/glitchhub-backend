@@ -18,7 +18,8 @@
   },
   "scripts": {
     "dev": "npx ts-node src/app.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update-database": "npx drizzle-kit push"
   },
   "keywords": [],
   "author": "",
