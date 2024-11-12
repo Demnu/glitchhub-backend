@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres-dev
+    environment:
+      POSTGRES_USER: harry
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: glitchhub
+    ports:
+      - "5444:5432"
+    volumes:
+      - glitchhub-dev:/var/lib/postgresql/data
+
+volumes:
+  glitchhub-dev:
+# To start container:
+# docker-compose -f glitchhub-dev.yml up -d
